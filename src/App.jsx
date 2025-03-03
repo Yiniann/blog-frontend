@@ -89,6 +89,10 @@ const App = () => {
     }
     setTimeout(() => setNotification({ message: null, type: '' }), 5000)
   }
+  //更新博客
+  const updateBlog = (updatedBlog) => {
+    setBlogs(blogs.map(blog => blog.id === updatedBlog.id ? updatedBlog : blog))
+  }
 
   // 如果 user 为 null，显示登录表单
   if (user === null) {
@@ -140,7 +144,7 @@ const App = () => {
       </Togglabel>
       {/* 博客展示 */}
       {blogs.map(blog =>
-        <Blog key={blog.id} blog={blog} />
+        <Blog key={blog.id} blog={blog} setBlogs={setBlogs} blogs={blogs} />
       )}
     </div>
   )
