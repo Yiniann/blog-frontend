@@ -144,7 +144,7 @@ const App = () => {
       </Togglabel>
       {/* 博客展示 使用sort方法按照 likes 排序 */}
       {[...blogs].sort((a, b) => b.likes - a.likes).map(blog =>
-        <Blog key={blog.id} blog={blog} setBlogs={setBlogs} />
+        <Blog key={blog.id} blog={blog} setBlogs={setBlogs} user={user} />
       )}
     </div>
   )
