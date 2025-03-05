@@ -5,6 +5,7 @@ import BlogForm from './components/BlogForm'
 import Togglabel from './components/Togglabel'
 import blogService from './services/blogs'
 import loginService from './services/login'
+import './App.css';
 
 
 const App = () => {
@@ -98,40 +99,49 @@ const App = () => {
   // 如果 user 为 null，显示登录表单
   if (user === null) {
     return (
-      <div>
-        <h2>Log in to application</h2>
-        <Notification message={notification.message} type={notification.type} />
-        <form onSubmit={handleLogin}>
-          <div>
-            username
-            <input
-              type="text"
-              value={username}
-              name="Username"
-              onChange={({ target }) => setUsername(target.value)}
-            />
+      <div className="auth-wrapper">
+        <div className="login-box">
+          <h2>Log in to application</h2>
+          <Notification message={notification.message} type={notification.type} />
+          <div className="login-container">
+            <form onSubmit={handleLogin}>
+              <div>
+                Username
+                <input
+                  type="text"
+                  value={username}
+                  name="Username"
+                  onChange={({ target }) => setUsername(target.value)}
+                />
+              </div>
+              <div>
+                Password
+                <input
+                  type="password"
+                  value={password}
+                  name="Password"
+                  onChange={({ target }) => setPassword(target.value)}
+                />
+              </div>
+              <button type="submit">Login</button>
+            </form>
           </div>
-          <div>
-            password
-            <input
-              type="password"
-              value={password}
-              name="Password"
-              onChange={({ target }) => setPassword(target.value)}
-            />
-          </div>
-          <button type="submit">login</button>
-        </form>
+        </div>
       </div>
     )
   }
-
+  
   return (
-    <div>
-      <h2>blogs</h2>
+    <div className="app-container">
+      <h2>Blogs</h2>
       <Notification message={notification.message} type={notification.type} />
-      <button onClick={handleLogout}>Logout</button>
-      {/* 使用 Togglabel 组件来控制博客表单的显示 */}
+  
+      {/* 欢迎用户和登出按钮 */}
+      <div className="user-info">
+        <p className="welcome-message">Welcome, <span className="username">{user.name}</span>!</p>
+        <button onClick={handleLogout} className="logout-button">Logout</button>
+      </div>
+  
       <Togglabel buttonLabel="Add a new blog" ref={blogFormRef}>
         <BlogForm
           addBlog={addBlog}
@@ -143,7 +153,7 @@ const App = () => {
           setNewBlogUrl={setNewBlogUrl}
         />
       </Togglabel>
-      {/* 博客展示 使用sort方法按照 likes 排序 */}
+  
       {[...blogs].sort((a, b) => b.likes - a.likes).map(blog =>
         <Blog key={blog.id} blog={blog} setBlogs={setBlogs} user={user} />
       )}

@@ -1,0 +1,77 @@
+/* 设置全局背景颜色 */
+body {
+  background-color: #9fc8f1; /* 柔和的淡蓝灰色背景 */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 登录页面居中 */
+.auth-wrapper {
+  height: 100vh; /* 让整个页面铺满视口 */
+  display: flex;
+  justify-content: center; /* 让内容水平居中 */
+  align-items: center; /* 让内容垂直居中 */
+}
+
+/* 登录容器 - 只包裹登录框 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录盒子 */
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px; /* 固定宽度 */
+  text-align: center;
+}
+
+/* 登录后应用的内容 - 靠左对齐 */
+.app-container {
+  max-width: 800px; /* 限制最大宽度 */
+  margin: 20px auto 0 50px; /* 让内容靠左，但有一些间距 */
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 用户信息区域，欢迎用户和登出按钮放在同一行 */
+.user-info {
+  display: flex;
+  align-items: center; /* 让它们垂直居中对齐 */
+  margin-bottom: 10px;
+}
+
+/* 欢迎用户文字样式 */
+.welcome-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: black; /* 欢迎消息设置为黑色 */
+}
+
+/* 用户名的样式 */
+.username {
+  color: #007bff; /* 设置用户名为蓝色，或者你可以根据需要调整颜色 */
+  font-weight: normal; /* 让用户名不那么突出 */
+  margin-left: 5px; /* 用户名和"Welcome"之间有一点间距 */
+}
+
+/* 登出按钮样式 */
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
