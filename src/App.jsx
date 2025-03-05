@@ -78,7 +78,8 @@ const App = () => {
 
     try {
       const addedBlog = await blogService.create(newBlog)
-      setBlogs(blogs.concat(addedBlog)) // 更新博客列表
+      const blogWithUser = {...addedBlog, user}
+      setBlogs(blogs.concat(blogWithUser)) // 更新博客列表
       setNewBlogTitle('')
       setNewBlogAuthor('')
       setNewBlogUrl('')
