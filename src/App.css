@@ -75,3 +75,20 @@ body {
 .logout-button:hover {
   background-color: #c82333;
 }
+
+/* ToggLabel按钮颜色 */
+
+.ToggLabel_button {
+  background-color: rgb(124, 235, 124);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+.ToggLabel_button:hover {
+  background-color: rgb(9, 139, 9);
+}
