@@ -83,12 +83,12 @@ const App = () => {
 
   if (user === null) {
     return (
-      <div className="auth-wrapper">
+      <div className="login-container">
         <div className="login-box">
           <h2>Log in to application</h2>
           <Notification message={notification.message} type={notification.type} />
           <form onSubmit={handleLogin}>
-            <div className="input-group">
+            <div className="login-input-group">
               <label htmlFor="username">Username:</label>
               <input
                 id="username"
@@ -98,7 +98,7 @@ const App = () => {
               />
             </div>
 
-            <div className="input-group">
+            <div className="login-input-group">
               <label htmlFor="password">Password:</label>
               <input
                 id="password"
@@ -125,7 +125,7 @@ const App = () => {
         <button onClick={handleLogout} className="logout-button">Logout</button>
       </div>
 
-      <Togglabel buttonLabel="Add a new blog" ref={blogFormRef}>
+      <Togglabel buttonLabel="Add a new blog" ref={blogFormRef} className="ToggLabel_button">
         <BlogForm
           addBlog={addBlog}
           newBlogTitle={newBlogTitle}

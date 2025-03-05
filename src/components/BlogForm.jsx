@@ -10,32 +10,35 @@ const BlogForm = ({
   setNewBlogUrl
 }) => {
   return (
-    <form onSubmit={addBlog}>
-      <div>
+    <form className="blog-form" onSubmit={addBlog}>
+      <div className="blog-input-group">
+        <label>Title</label>
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Enter blog title"
           value={newBlogTitle}
           onChange={({ target }) => setNewBlogTitle(target.value)}
         />
       </div>
-      <div>
+      <div className="blog-input-group">
+        <label>Author</label>
         <input
           type="text"
-          placeholder="Author"
+          placeholder="Enter author name"
           value={newBlogAuthor}
           onChange={({ target }) => setNewBlogAuthor(target.value)}
         />
       </div>
-      <div>
+      <div className="blog-input-group">
+        <label>URL</label>
         <input
           type="text"
-          placeholder="URL"
+          placeholder="Enter blog URL"
           value={newBlogUrl}
           onChange={({ target }) => setNewBlogUrl(target.value)}
         />
       </div>
-      <button type="submit">Add Blog</button>
+      <button type="submit" className="blog-button">Add Blog</button>
     </form>
   )
 }
@@ -49,6 +52,5 @@ BlogForm.propTypes = {
   setNewBlogAuthor : PropTypes.func.isRequired,
   setNewBlogUrl : PropTypes.func.isRequired
 }
-
 
 export default BlogForm
