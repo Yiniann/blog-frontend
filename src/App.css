@@ -25,41 +25,87 @@ body {
 .login-box {
   background-color: white;
   padding: 40px;
-  border-radius: 50px;
+  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 400px; /* 固定宽度 */
   text-align: center;
 }
 
-/* 登录后应用的内容 - 靠左对齐 */
+/* 输入框容器（让标签和输入框在同一行） */
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px; /* 让两行之间有间距 */
+}
+
+/* 标签样式 */
+.input-group label {
+  width: 100px; /* 固定宽度，确保对齐 */
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* 输入框样式 */
+.input-group input {
+  flex: 1; /* 让输入框填充剩余空间 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 登录按钮 */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* 登录后应用的内容 */
 .app-container {
-  max-width: 800px; /* 限制最大宽度 */
-  margin: 20px auto 0 50px; /* 让内容靠左，但有一些间距 */
+  max-width: 90%; /* 允许一定程度的自适应 */
+  width: 800px; /* 限制最大宽度 */
+  margin: 40px auto; /* 顶部有适当的间距 */
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 让内容撑满容器 */
 }
 
-/* 用户信息区域，欢迎用户和登出按钮放在同一行 */
+/* 用户信息区域 */
 .user-info {
   display: flex;
-  align-items: center; /* 让它们垂直居中对齐 */
-  margin-bottom: 10px;
+  justify-content: space-between; /* 让欢迎信息和登出按钮分开 */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* 欢迎用户文字样式 */
+/* 欢迎用户文字 */
 .welcome-message {
   font-size: 18px;
   font-weight: bold;
-  color: black; /* 欢迎消息设置为黑色 */
+  color: black;
 }
 
-/* 用户名的样式 */
+/* 用户名样式 */
 .username {
-  color: #007bff; /* 设置用户名为蓝色，或者你可以根据需要调整颜色 */
-  font-weight: normal; /* 让用户名不那么突出 */
-  margin-left: 5px; /* 用户名和"Welcome"之间有一点间距 */
+  color: #007bff;
+  font-weight: normal;
+  margin-left: 5px;
 }
 
 /* 登出按钮样式 */
@@ -76,8 +122,14 @@ body {
   background-color: #c82333;
 }
 
-/* ToggLabel按钮颜色 */
+/* 博客列表 */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 让博客之间有间距 */
+}
 
+/* ToggLabel按钮 */
 .ToggLabel_button {
   background-color: rgb(124, 235, 124);
   color: white;
