@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const BlogForm = ({
   addBlog,
   newBlogTitle,
@@ -37,5 +39,16 @@ const BlogForm = ({
     </form>
   )
 }
+
+BlogForm.propTypes = {
+  addBlog : PropTypes.func.isRequired,
+  newBlogTitle : PropTypes.string.isRequired,
+  newBlogAuthor : PropTypes.string.isRequired,
+  newBlogUrl : PropTypes.string.isRequired,
+  setNewBlogTitle : PropTypes.func.isRequired,
+  setNewBlogAuthor : PropTypes.func.isRequired,
+  setNewBlogUrl : PropTypes.func.isRequired
+}
+
 
 export default BlogForm

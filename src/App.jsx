@@ -57,7 +57,7 @@ const App = () => {
       setNotification({ message: 'Wrong credentials', type: 'error' })//登录失败通知
     }
     setTimeout(() => setNotification({ message: null, type: '' }), 5000)//设置通知时间，重置通知栏
-    console.log('loggedBlogappUser', username, password)
+    console.log('loggedBlogappUser', username)
   }
 
   const handleLogout = () => {
